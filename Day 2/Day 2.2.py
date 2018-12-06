@@ -3,21 +3,22 @@
 # Day 2
 # Puzzle 2
 
-# Read in the file, creates a set with all of the IDs as a new line.
+# Import the Counter class from Collections
 
-ids = []
+from collections import Counter
 
-for line in open("input.txt"):
-	ids.append(line)
+# Read in the file.
 
-for x in ids:
-	for y in ids:
-		differences = 0
-		for i in range(len(x)):
-			if x[i] != y[i]:
-				differences += 1
-		if differences == 1
+input = open('input.txt', 'r')
+boxIDs = input.read().strip().splitlines()
+input.close()
 
-
-	
-
+for i in boxIDs:
+        for j in boxIDs:
+            diffs = 0
+            for idNum, char in enumerate(i):
+                if char != j[idNum]:
+                    diffs += 1
+            if diffs == 1:
+                answer = [char for idNum, char in enumerate(i) if j[idNum] == char]
+                print(''.join(answer))
