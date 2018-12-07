@@ -12,12 +12,12 @@
 # Import itertools to iterate over the input. 
 import itertools
 
-puzzelInput = [int(x) for x in open("rawInput.txt").readlines()]
-print(sum(puzzelInput))
+puzzleInput = [int(x) for x in open("rawInput.txt").readlines()]
+print(sum(puzzleInput))
 
 workingNum = 0
 repeatedNum = {0}
-for num in itertools.cycle(puzzelInput):
+for num in itertools.cycle(puzzleInput):
 	workingNum += num
 	if workingNum in repeatedNum:
 		print(workingNum); break
